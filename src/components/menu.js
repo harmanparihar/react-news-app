@@ -9,11 +9,11 @@ const Menu = (props) => (
     //    return(
             <div>
                 <ul>
-                    <a href="#" onClick={() =>{props.getNews("ca")}}>Canada</a>
-                    <a href="#" onClick={() =>{props.getNews("us")}}>USA</a>
-                    <a href="#" onClick={() =>{props.searchNews(props.search_phrase)}}>Search Results</a>
-                    <a href="#" onClick={() =>{props.getNews("in")}}>India</a>
-                    <a href="#" onClick={() =>{props.getNews("ar")}}>Argentina</a>
+                    <button onClick={() =>{props.getNews("ca")}}>Canada</button>
+                    <button onClick={() =>{props.getNews("us")}}>USA</button>
+                    <button onClick={() =>{props.searchNews(props.search_phrase)}}>Search Results</button>
+                    <button onClick={() =>{props.getNews("in")}}>India</button>
+                    <button onClick={() =>{props.getNews("ar")}}>Argentina</button>
                 </ul>
             </div>
 )
