@@ -4,8 +4,8 @@ import Menu from './menu'
 
 const Header = (props) => (
     <div>
-        <Search />
-        <Menu getNews={props.getNews}/>
+        <Search search_phrase={props.search_phrase} formsubmit={props.formsubmit}/>
+        <Menu searchNews={props.searchNews} search_phrase={props.search_phrase} getNews={props.getNews}/>
     </div>
 )
 export default Header

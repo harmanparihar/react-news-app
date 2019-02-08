@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Search = () => (
+const Search = (props) => (
     <div>
-        <form> 
-            <input type="text" placeholder="Keyword or Search Phrase" /> 
+        <form onSubmit={props.formsubmit}> 
+            <input name="search-field" type="text" placeholder="Keyword or Search Phrase" /> 
             <button>Search</button>
         </form>
     </div>

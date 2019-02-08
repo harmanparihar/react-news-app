@@ -11,7 +11,7 @@ const Menu = (props) => (
                 <ul>
                     <a href="#" onClick={() =>{props.getNews("ca")}}>Canada</a>
                     <a href="#" onClick={() =>{props.getNews("us")}}>USA</a>
-                    <a href="#" onClick={() =>{props.getNews()}}>Search Results</a>
+                    <a href="#" onClick={() =>{props.searchNews(props.search_phrase)}}>Search Results</a>
                     <a href="#" onClick={() =>{props.getNews("in")}}>India</a>
                     <a href="#" onClick={() =>{props.getNews("ar")}}>Argentina</a>
                 </ul>
