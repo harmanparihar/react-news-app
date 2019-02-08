@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+body{
+  font-family: Lato;
+  max-width: 800px;
+  margin: auto; 
 }
 
 .App-logo {
@@ -29,4 +32,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+img{
+  max-width: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+article{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 300px 1fr;
+  padding: 20px;
+}
+@media screen and (max-width:600px){
+  article{
+
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: auto;
+  }
+  img{
+    max-width: 500px;
+  }
+}
+h1{
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin: 0;
+}
+h2{
+  font-size: 0.9rem;
+  color: #777;
+  font-weight: 400;
+  margin:0;
+}
+p{
+  padding: 0;
 }

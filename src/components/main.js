@@ -1,8 +1,18 @@
 import React from 'react'
+import Article from './article'
 
-const Main = () => (
-    <div>
-        Main
-    </div>
-)
+
+const Main = (props) => {
+    const mapped_articles = props.articles.map((a) =>
+        <Article article = {a}/>
+    );
+    return(
+        <div>
+            {mapped_articles}
+        </div>
+    )
+}
+    
+
+
 export default Main

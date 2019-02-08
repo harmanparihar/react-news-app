@@ -16,10 +16,6 @@ const styles = (theme) => ({
   label: {
     padding: '1rem 0',
     fontSize: '18px',
-    [theme.breakpoints.down('709')]: {
-      paddingTop: '.5rem',
-      paddingBottom: '.5rem',
-    },
   },
 })
 class Menu extends React.Component {
