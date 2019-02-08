@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 body{
+  border: 2px solid #282c34 ;
   font-family: Lato;
   max-width: 800px;
   margin: auto; 
+  padding: 20px 4%;
 }
 
 .App-logo {
@@ -42,7 +44,7 @@ article{
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 300px 1fr;
-  padding: 20px;
+  margin: 30px auto;
 }
 @media screen and (max-width:600px){
   article{
@@ -68,4 +70,33 @@ h2{
 }
 p{
   padding: 0;
+}
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+}
+li{
+  border: 2px solid #282c34 ;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+form{
+  display: grid;
+  grid-template-columns: 3fr 1fr
+}
+input{
+  padding: 20px;
+  border: 2px solid #282c34 ;
+  font-size: 1rem;
+}
+button{
+  padding: 20px;
+  border: 2px solid #282c34 ;
+  font-size: 1rem;
+  background-color: cornflowerblue;
 }

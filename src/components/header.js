@@ -4,7 +4,6 @@ import Menu from './menu'
 
 const Header = () => (
     <div>
-        Header
         <Search />
         <Menu />
     </div>
