@@ -2,10 +2,10 @@ import React from 'react'
 import Search from './search'
 import Menu from './menu'
 
-const Header = () => (
+const Header = (props) => (
     <div>
         <Search />
-        <Menu />
+        <Menu getNews={props.getNews}/>
     </div>
 )
 export default Header

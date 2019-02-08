@@ -1,19 +1,23 @@
 import React from 'react'
 
-const Menu = (props) => {
+const Menu = (props) => (
+    // clickHandler(country_code){
+    //     console.log(country_code + " clicked")
+    //     this.props.getNews(country_code)
+    // }
+    // render() {
+    //    return(
+            <div>
+                <ul>
+                    <a href="#" onClick={() =>{props.getNews("ca")}}>Canada</a>
+                    <a href="#" onClick={() =>{props.getNews("us")}}>USA</a>
+                    <a href="#" onClick={() =>{props.getNews()}}>Search Results</a>
+                    <a href="#" onClick={() =>{props.getNews("in")}}>India</a>
+                    <a href="#" onClick={() =>{props.getNews("ar")}}>Argentina</a>
+                </ul>
+            </div>
+)
 
-    return(
-        <div>
-            <ul>
-                <li>Canada</li>
-                <li>USA</li>
-                <li>Search Results</li>
-                <li>India</li>
-                <li>Argentina</li>
-            </ul>
-        </div>
-    )
-}
     
 
 

@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom';
 import Header from './components/header'
 import Main from './components/main'
 import './App.css';
 import axios from 'axios'
 class App extends Component {
-  state = {
-    articles: [{title: "", author: "", description: "",urlImage:"", publishedAt: "",content: ""}],
+  constructor(){
+    super()
+    this.state = {
+      articles: [{title: "", author: "", description: "",urlImage:"", publishedAt: "",content: ""}],
+    }
+    this.getNews = this.getNews.bind(this);
   }
   componentDidMount(){
-    this.getNews('us');
+    this.getNews('in');
   }
+ 
   getNews(country) {
             axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=b48b8a1b85024c5d8d1db1fe09167c36`)
             .then(response => {
                 if (!response.data.errmsg) {
+                  this.setState({articles : response.data.articles})
                     console.log('get operation successful')
                     console.log(response.data.articles)
-                    this.setState({articles : response.data.articles})
+                    
                 } else {
                     console.log('resgister operation failed')
                 }
@@ -30,24 +35,8 @@ class App extends Component {
    
     return (
       <div className="wrapper">
-        <Header/>
-        <Route
-            exact
-            path="/"
-            
-        render={() => { return(<Main articles =  {this.state.articles}/>)}}
-        />
-        <Route
-            exact
-            path="/us"
-            render={() => <Main articles = {this.state.articles}/>}
-        />
-        <Route
-            exact
-            path="/us"
-            render={() => <Main articles = {this.state.articles}/>}
-        />
-        
+        <Header getNews={this.getNews}/>
+        <Main articles={this.state.articles}/>
       </div>
     );
   }
