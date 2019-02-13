@@ -7,7 +7,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      articles: [{title: "", author: "", description: "",urlImage:"", publishedAt: "",content: ""}],
+      articles: [{title: "", author: "", description: "",urlImage:"", publishedAt: "",url: ""}],
       search_phrase: "",
     }
     this.getNews = this.getNews.bind(this);
@@ -15,10 +15,10 @@ class App extends Component {
     this.formsubmit = this.formsubmit.bind(this);
   }
   componentDidMount(){
-    this.getNews('in');
+    this.getNews('fr');
   }
   getNews(country) {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=b48b8a1b85024c5d8d1db1fe09167c36`)
+    axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&pageSize=10&apiKey=b48b8a1b85024c5d8d1db1fe09167c36`)
     .then(response => {
         if (!response.data.errmsg) {
           this.setState({articles : response.data.articles})
@@ -40,7 +40,7 @@ class App extends Component {
     this.searchNews(event.target.elements[0].value)
   }
   searchNews=(params) => {
-    axios.get(`https://newsapi.org/v2/everything?q=${params}&apiKey=b48b8a1b85024c5d8d1db1fe09167c36`)
+    axios.get(`https://newsapi.org/v2/everything?q=${params}&pageSize=10&apiKey=b48b8a1b85024c5d8d1db1fe09167c36`)
     .then(response => {
       if (!response.data.errmsg) {
         this.setState({articles : response.data.articles})
@@ -56,7 +56,6 @@ class App extends Component {
     })
   }
   render() {
-   
     return (
       <div className="wrapper">
         <Header search_phrase={this.state.search_phrase} formsubmit={this.formsubmit} getNews={this.getNews} searchNews={this.searchNews}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Article = (props) => (
-        <div>
+        <a href={props.article.url}>
             <article>
                 <img className="" src={props.article.urlToImage} alt=""/>
                 <div>
@@ -13,7 +13,7 @@ const Article = (props) => (
                 </div>
             </article>
             <hr/>
-        </div>
+        </a>
 )
 
 export default Article;
